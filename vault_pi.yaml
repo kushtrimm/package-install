@@ -1,0 +1,14 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: vault
+  namespace: carvel-package
+spec:
+  packageRef:
+    refName: vault.itq.io
+    versionSelection:
+      constraints: 1.13.1
+  serviceAccountName: vault-carvel-package-sa
+  values:
+  - secretRef:
+      name: vault-carvel-package-values
