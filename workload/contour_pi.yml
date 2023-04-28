@@ -1,0 +1,17 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: contour
+  namespace: carvel-package
+  annotations:
+    kapp.k14s.io/change-group: "apps.big.co/contour"
+    kapp.k14s.io/change-rule: "upsert after upserting apps.big.co/cert-manager"
+spec:
+  packageRef:
+    refName: contour.tanzu.vmware.com
+    versionSelection:
+      constraints: 1.22.3+vmware.1-tkg.1
+  serviceAccountName: carvel-package-admin-sa
+  values:
+  - secretRef:
+      name: contour-values
