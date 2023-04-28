@@ -4,8 +4,8 @@ metadata:
   name: external-dns
   namespace: carvel-package
   annotations:
-    kapp.k14s.io/change-group: "apps.big.co/external-dns"
-    kapp.k14s.io/change-rule: "upsert after upserting apps.big.co/cert-manager"
+    kapp.k14s.io/change-group: "workload/external-dns"
+    kapp.k14s.io/change-rule: "upsert after upserting workload/cert-manager"
 spec:
   packageRef:
     refName: external-dns.tanzu.vmware.com

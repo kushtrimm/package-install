@@ -4,7 +4,7 @@ metadata:
   name: cert-manager
   namespace: carvel-package
   annotations:
-    kapp.k14s.io/change-group: "apps.big.co/cert-manager"
+    kapp.k14s.io/change-group: "workload/cert-manager"
 spec:
   packageRef:
     refName: cert-manager.tanzu.vmware.com
