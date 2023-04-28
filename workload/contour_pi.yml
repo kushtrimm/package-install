@@ -5,7 +5,7 @@ metadata:
   namespace: carvel-package
   annotations:
     kapp.k14s.io/change-group: "apps.big.co/contour"
-    kapp.k14s.io/change-rule: "upsert after upserting apps.big.co/cert-manager"
+    kapp.k14s.io/change-rule: "upsert after upserting apps.big.co/cert-manager and apps.big.co/external-dns"
 spec:
   packageRef:
     refName: contour.tanzu.vmware.com

@@ -1,0 +1,17 @@
+apiVersion: packaging.carvel.dev/v1alpha1
+kind: PackageInstall
+metadata:
+  name: external-dns
+  namespace: carvel-package
+  annotations:
+    kapp.k14s.io/change-group: "apps.big.co/external-dns"
+    kapp.k14s.io/change-rule: "upsert after upserting apps.big.co/cert-manager"
+spec:
+  packageRef:
+    refName: external-dns.tanzu.vmware.com
+    versionSelection:
+      constraints: 0.12.2+vmware.4-tkg.2
+  serviceAccountName: carvel-package-admin-sa
+  values:
+  - secretRef:
+      name: external-dns-values
