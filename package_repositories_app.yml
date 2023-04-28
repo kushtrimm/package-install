@@ -1,0 +1,15 @@
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: shared-services
+  namespace: carvel-package
+spec:
+  serviceAccountName: vault-carvel-package-sa
+  fetch:
+  - git:
+      url: https://github.com/kushtrimm/package-install.git
+      ref: main
+  template:
+  - ytt: {}
+  deploy:
+  - kapp: {}
